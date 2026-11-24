@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title description">
+  <title id="title">Cómo BEAM schedulers ejecutan procesos</title>
+  <desc id="description">Tres schedulers, cada uno un hilo del sistema operativo, toman procesos listos de su run queue y ejecutan uno a la vez. Si se agotan las reductions el proceso sigue listo; si espera en receive queda bloqueado hasta que llega un mensaje.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#425466"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#7890a8"/>
+    </marker>
+    <style>
+      .title { font: 700 22px sans-serif; fill: #172b4d; }
+      .label { font: 700 16px sans-serif; fill: #172b4d; }
+      .text { font: 14px sans-serif; fill: #253858; }
+      .small { font: 13px sans-serif; fill: #425466; }
+      .lane { fill: #f7f9fc; stroke: #c4d1de; stroke-width: 1.5; }
+      .queue { fill: #e8f1fb; stroke: #6b9ac4; stroke-width: 1.5; }
+      .process { fill: #fff; stroke: #9fb3c8; stroke-width: 1.5; }
+      .running { fill: #e8f5ed; stroke: #75a88a; stroke-width: 1.5; }
+      .arrow { fill: none; stroke: #425466; stroke-width: 2; marker-end: url(#arrow); }
+      .balance { fill: none; stroke: #7890a8; stroke-width: 1.8; stroke-dasharray: 6 5; marker-end: url(#arrow-muted); }
+    </style>
+  </defs>
+
+  <rect x="16" y="16" width="968" height="488" rx="14" fill="#fff" stroke="#d7e0ea"/>
+  <text class="title" x="42" y="52">Schedulers y run queues</text>
+
+  <rect class="lane" x="36" y="76" width="294" height="337" rx="12"/>
+  <rect class="lane" x="353" y="76" width="294" height="337" rx="12"/>
+  <rect class="lane" x="670" y="76" width="294" height="337" rx="12"/>
+
+  <text class="label" x="57" y="108">Scheduler 1</text>
+  <text class="small" x="57" y="128">hilo del sistema operativo</text>
+  <text class="label" x="374" y="108">Scheduler 2</text>
+  <text class="small" x="374" y="128">hilo del sistema operativo</text>
+  <text class="label" x="691" y="108">Scheduler 3</text>
+  <text class="small" x="691" y="128">hilo del sistema operativo</text>
+
+  <rect class="queue" x="57" y="147" width="252" height="76" rx="9"/>
+  <rect class="queue" x="374" y="147" width="252" height="76" rx="9"/>
+  <rect class="queue" x="691" y="147" width="252" height="76" rx="9"/>
+  <text class="label" x="75" y="174">Run queue</text>
+  <text class="text" x="75" y="200">P1 · P4 · P7</text>
+  <text class="label" x="392" y="174">Run queue</text>
+  <text class="text" x="392" y="200">P2 · P5</text>
+  <text class="label" x="709" y="174">Run queue</text>
+  <text class="text" x="709" y="200">P3 · P6</text>
+
+  <path class="arrow" d="M183 231 V263"/>
+  <path class="arrow" d="M500 231 V263"/>
+  <path class="arrow" d="M817 231 V263"/>
+
+  <rect class="running" x="76" y="272" width="214" height="67" rx="9"/>
+  <rect class="running" x="393" y="272" width="214" height="67" rx="9"/>
+  <rect class="running" x="710" y="272" width="214" height="67" rx="9"/>
+  <text class="label" x="101" y="299">Ejecuta P1</text>
+  <text class="small" x="101" y="322">un proceso a la vez</text>
+  <text class="label" x="418" y="299">Ejecuta P2</text>
+  <text class="small" x="418" y="322">un proceso a la vez</text>
+  <text class="label" x="735" y="299">Ejecuta P3</text>
+  <text class="small" x="735" y="322">un proceso a la vez</text>
+
+  <path class="arrow" d="M183 346 V354 C183 363 303 363 303 354 V230"/>
+  <path class="arrow" d="M500 346 V354 C500 363 620 363 620 354 V230"/>
+  <path class="arrow" d="M817 346 V354 C817 363 937 363 937 354 V230"/>
+  <text class="small" x="75" y="395">si sigue listo, vuelve a la cola</text>
+  <text class="small" x="392" y="395">si sigue listo, vuelve a la cola</text>
+  <text class="small" x="709" y="395">si sigue listo, vuelve a la cola</text>
+
+  <path class="balance" d="M310 184 C330 158 348 158 370 184"/>
+  <path class="balance" d="M627 184 C647 158 665 158 687 184"/>
+  <text class="small" x="118" y="442">Reductions agotadas -> runnable | receive sin match -> espera | llega mensaje -> runnable</text>
+  <text class="text" x="83" y="474">El runtime balancea carga entre colas; un proceso no se ejecuta en dos schedulers a la vez.</text>
+</svg>

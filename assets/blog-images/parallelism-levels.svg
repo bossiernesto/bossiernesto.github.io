@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="title description">
+  <title id="title">Niveles de paralelismo</title>
+  <desc id="description">Cuatro escalas de paralelismo: instrucciones dentro de un núcleo, datos procesados por SIMD o GPU, tareas en varios núcleos de una máquina y trabajo distribuido entre nodos. Son formas combinables, no excluyentes.</desc>
+  <defs>
+    <style>
+      .title { font: 700 22px sans-serif; fill: #172b4d; }
+      .label { font: 700 16px sans-serif; fill: #172b4d; }
+      .text { font: 14px sans-serif; fill: #253858; }
+      .small { font: 13px sans-serif; fill: #425466; }
+      .card { fill: #f5f8fc; stroke: #9fb3c8; stroke-width: 1.5; }
+      .accent { fill: #e8f1fb; stroke: #6b9ac4; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect x="16" y="16" width="928" height="388" rx="14" fill="#fff" stroke="#d7e0ea"/>
+  <text class="title" x="42" y="53">Escalas donde puede aparecer el paralelismo</text>
+
+  <rect class="accent" x="42" y="82" width="420" height="118" rx="11"/>
+  <text class="label" x="64" y="112">1 · Dentro de un núcleo</text>
+  <text class="text" x="64" y="140">Paralelismo de instrucciones (ILP)</text>
+  <text class="small" x="64" y="166">El CPU solapa instrucciones independientes.</text>
+  <text class="small" x="64" y="185">Granularidad muy fina, gestionada por CPU/compiler.</text>
+
+  <rect class="card" x="498" y="82" width="420" height="118" rx="11"/>
+  <text class="label" x="520" y="112">2 · Sobre muchos datos</text>
+  <text class="text" x="520" y="140">Paralelismo de datos (SIMD / GPU)</text>
+  <text class="small" x="520" y="166">La misma operación actúa sobre varios elementos.</text>
+  <text class="small" x="520" y="185">Útil cuando el trabajo puede vectorizarse.</text>
+
+  <rect class="card" x="42" y="225" width="420" height="118" rx="11"/>
+  <text class="label" x="64" y="255">3 · Entre tareas en una máquina</text>
+  <text class="text" x="64" y="283">Paralelismo de tareas / hilos</text>
+  <text class="small" x="64" y="309">Núcleos ejecutan tareas independientes a la vez.</text>
+  <text class="small" x="64" y="328">Aquí encajan los procesos de BEAM y schedulers.</text>
+
+  <rect class="accent" x="498" y="225" width="420" height="118" rx="11"/>
+  <text class="label" x="520" y="255">4 · Entre máquinas</text>
+  <text class="text" x="520" y="283">Paralelismo distribuido</text>
+  <text class="small" x="520" y="309">Nodos distintos trabajan y se comunican por red.</text>
+  <text class="small" x="520" y="328">Aparecen latencia, fallos y serialización.</text>
+
+  <text class="small" x="101" y="376">Estas escalas pueden combinarse; no son alternativas excluyentes.</text>
+</svg>
