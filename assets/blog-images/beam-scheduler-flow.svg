@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" role="img" aria-labelledby="title description">
+  <title id="title">Procesos BEAM y schedulers</title>
+  <desc id="description">Los schedulers ejecutan procesos BEAM listos en cores disponibles; otro proceso puede esperar en una cola.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#718096"/>
+    </marker>
+    <style>
+      text { font-family: sans-serif; }
+      .heading { font-size: 19px; font-weight: 700; fill: #172b4d; }
+      .label { font-size: 15px; font-weight: 600; fill: #43536a; }
+      .box-label { font-size: 15px; font-weight: 700; fill: #172b4d; }
+      .note { font-size: 14px; fill: #43536a; }
+      .arrow { fill: none; stroke: #718096; stroke-width: 2; marker-end: url(#arrow); }
+      .waiting { fill: none; stroke: #718096; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="16" y="16" width="968" height="398" rx="8" fill="#fff" stroke="#d7e0ea" stroke-width="2"/>
+  <text class="heading" x="48" y="58">ERTS ejecuta procesos listos mediante schedulers</text>
+
+  <text class="label" x="70" y="104">PROCESOS BEAM</text>
+  <text class="label" x="375" y="104">SCHEDULERS</text>
+  <text class="label" x="710" y="104">CPU</text>
+
+  <rect x="70" y="128" width="188" height="58" rx="5" fill="#e8f1f7" stroke="#9fb3c8"/>
+  <text class="box-label" x="164" y="163" text-anchor="middle">Proceso A</text>
+  <path class="arrow" d="M258 157H350"/>
+  <rect x="365" y="128" width="210" height="58" rx="5" fill="#f5f7fa" stroke="#9fb3c8"/>
+  <text class="box-label" x="470" y="163" text-anchor="middle">Scheduler 1</text>
+  <path class="arrow" d="M575 157H680"/>
+  <rect x="695" y="128" width="220" height="58" rx="5" fill="#f5f7fa" stroke="#9fb3c8"/>
+  <text class="box-label" x="805" y="163" text-anchor="middle">Core disponible</text>
+
+  <rect x="70" y="211" width="188" height="58" rx="5" fill="#e8f1f7" stroke="#9fb3c8"/>
+  <text class="box-label" x="164" y="246" text-anchor="middle">Proceso B</text>
+  <path class="arrow" d="M258 240H350"/>
+  <rect x="365" y="211" width="210" height="58" rx="5" fill="#f5f7fa" stroke="#9fb3c8"/>
+  <text class="box-label" x="470" y="246" text-anchor="middle">Scheduler 2</text>
+  <path class="arrow" d="M575 240H680"/>
+  <rect x="695" y="211" width="220" height="58" rx="5" fill="#f5f7fa" stroke="#9fb3c8"/>
+  <text class="box-label" x="805" y="246" text-anchor="middle">Otro core disponible</text>
+
+  <rect x="70" y="294" width="188" height="58" rx="5" fill="#e8f1f7" stroke="#9fb3c8"/>
+  <text class="box-label" x="164" y="329" text-anchor="middle">Proceso C listo</text>
+  <path class="waiting" d="M258 323H350"/>
+  <rect x="365" y="294" width="210" height="58" rx="5" fill="#fff" stroke="#9fb3c8" stroke-dasharray="6 5"/>
+  <text class="box-label" x="470" y="329" text-anchor="middle">Run queue</text>
+  <text class="note" x="605" y="317">Espera hasta que un scheduler</text>
+  <text class="note" x="605" y="339">pueda ejecutarlo.</text>
+
+  <text class="note" x="70" y="385">El sistema operativo asigna tiempo de CPU a los hilos scheduler.</text>
+</svg>

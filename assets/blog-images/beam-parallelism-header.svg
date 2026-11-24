@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Paralelismo en la BEAM</title>
+  <desc id="description">Tres schedulers ejecutan distintos procesos de BEAM en paralelo.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#9aa7b8"/>
+    </marker>
+    <style>
+      text { font-family: sans-serif; }
+      .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 3px; fill: #61728a; }
+      .heading { font-size: 112px; font-weight: 700; letter-spacing: 2px; fill: #172b4d; }
+      .subtitle { font-size: 30px; fill: #43536a; }
+      .caption { font-size: 19px; font-weight: 600; fill: #43536a; }
+      .scheduler { font-size: 20px; font-weight: 700; fill: #43536a; }
+      .process { font-size: 18px; font-weight: 700; fill: #fff; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f5f7fa"/>
+  <path d="M760 150V750" stroke="#d8dee7" stroke-width="2"/>
+
+  <text class="eyebrow" x="112" y="310">ERLANG · ELIXIR</text>
+  <text class="heading" x="105" y="438">BEAM</text>
+  <text class="subtitle" x="112" y="505">Paralelismo con</text>
+  <text class="subtitle" x="112" y="546">schedulers</text>
+  <path d="M112 592H390" stroke="#2b6f91" stroke-width="4"/>
+  <text class="caption" x="112" y="642">Muchos procesos ligeros.</text>
+
+  <text class="caption" x="850" y="205">Ejecución en paralelo</text>
+  <text class="eyebrow" x="850" y="260">SCHEDULERS</text>
+  <text class="eyebrow" x="1060" y="260">PROCESOS</text>
+
+  <text class="scheduler" x="850" y="350">S1</text>
+  <path d="M930 343H1450" stroke="#cbd3dd" stroke-width="2"/>
+  <rect x="1010" y="307" width="160" height="72" rx="8" fill="#2b6f91"/>
+  <text class="process" x="1090" y="351" text-anchor="middle">P1</text>
+  <rect x="1250" y="307" width="150" height="72" rx="8" fill="#2b6f91"/>
+  <text class="process" x="1325" y="351" text-anchor="middle">P4</text>
+
+  <text class="scheduler" x="850" y="510">S2</text>
+  <path d="M930 503H1450" stroke="#cbd3dd" stroke-width="2"/>
+  <rect x="1100" y="467" width="160" height="72" rx="8" fill="#2b6f91"/>
+  <text class="process" x="1180" y="511" text-anchor="middle">P2</text>
+  <rect x="1320" y="467" width="130" height="72" rx="8" fill="#2b6f91"/>
+  <text class="process" x="1385" y="511" text-anchor="middle">P5</text>
+
+  <text class="scheduler" x="850" y="670">S3</text>
+  <path d="M930 663H1450" stroke="#cbd3dd" stroke-width="2"/>
+  <rect x="1030" y="627" width="160" height="72" rx="8" fill="#2b6f91"/>
+  <text class="process" x="1110" y="671" text-anchor="middle">P3</text>
+  <rect x="1260" y="627" width="150" height="72" rx="8" fill="#2b6f91"/>
+  <text class="process" x="1335" y="671" text-anchor="middle">P6</text>
+
+  <path d="M1010 745H1450" stroke="#9aa7b8" stroke-width="2" marker-end="url(#arrow)"/>
+  <text class="caption" x="1465" y="752">tiempo</text>
+</svg>

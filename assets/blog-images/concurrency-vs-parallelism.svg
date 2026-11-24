@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" role="img" aria-labelledby="title description">
+  <title id="title">Concurrencia y paralelismo</title>
+  <desc id="description">En una CPU, dos tareas se turnan. En dos cores, las tareas pueden ejecutarse al mismo tiempo.</desc>
+  <defs>
+    <style>
+      text { font-family: sans-serif; }
+      .heading { font-size: 19px; font-weight: 700; fill: #172b4d; }
+      .label { font-size: 15px; font-weight: 600; fill: #43536a; }
+      .task { font-size: 16px; font-weight: 700; fill: #fff; }
+      .note { font-size: 15px; fill: #43536a; }
+    </style>
+  </defs>
+
+  <rect x="16" y="16" width="968" height="358" rx="8" fill="#fff" stroke="#d7e0ea" stroke-width="2"/>
+  <path d="M500 38V352" stroke="#d7e0ea" stroke-width="2"/>
+
+  <text class="heading" x="48" y="66">CONCURRENCIA · 1 CPU</text>
+  <text class="label" x="48" y="103">Las tareas avanzan por turnos</text>
+  <text class="label" x="48" y="171">CPU</text>
+  <rect x="115" y="137" width="74" height="48" rx="5" fill="#2b6f91"/>
+  <text class="task" x="152" y="168" text-anchor="middle">A</text>
+  <rect x="196" y="137" width="74" height="48" rx="5" fill="#5b9e9a"/>
+  <text class="task" x="233" y="168" text-anchor="middle">B</text>
+  <rect x="277" y="137" width="74" height="48" rx="5" fill="#2b6f91"/>
+  <text class="task" x="314" y="168" text-anchor="middle">A</text>
+  <rect x="358" y="137" width="74" height="48" rx="5" fill="#5b9e9a"/>
+  <text class="task" x="395" y="168" text-anchor="middle">B</text>
+  <text class="note" x="48" y="246">Una CPU alterna entre A y B.</text>
+  <path d="M115 291H432" stroke="#9aa7b8" stroke-width="2"/>
+  <text class="label" x="432" y="320" text-anchor="end">tiempo →</text>
+
+  <text class="heading" x="540" y="66">PARALELISMO · 2 CORES</text>
+  <text class="label" x="540" y="103">Las tareas se ejecutan a la vez</text>
+  <text class="label" x="540" y="163">Core 1</text>
+  <rect x="620" y="129" width="150" height="48" rx="5" fill="#2b6f91"/>
+  <text class="task" x="695" y="160" text-anchor="middle">A</text>
+  <text class="label" x="540" y="225">Core 2</text>
+  <rect x="620" y="191" width="150" height="48" rx="5" fill="#5b9e9a"/>
+  <text class="task" x="695" y="222" text-anchor="middle">B</text>
+  <text class="note" x="540" y="281">A y B avanzan simultáneamente.</text>
+  <path d="M620 291H940" stroke="#9aa7b8" stroke-width="2"/>
+  <text class="label" x="940" y="320" text-anchor="end">tiempo →</text>
+</svg>
