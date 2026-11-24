@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Paxos: consenso por mayoría</title>
+  <desc id="description">Tres de cinco aceptadores acuerdan el mismo valor.</desc>
+  <style>
+    text { font-family: sans-serif; }
+    .eyebrow { font-size: 18px; font-weight: 700; letter-spacing: 3px; fill: #61728a; }
+    .heading { font-size: 112px; font-weight: 700; letter-spacing: 2px; fill: #172b4d; }
+    .subtitle { font-size: 32px; fill: #43536a; }
+    .caption { font-size: 19px; font-weight: 600; fill: #43536a; }
+    .node-label { font-size: 18px; font-weight: 700; fill: #fff; }
+    .inactive-label { font-size: 18px; font-weight: 700; fill: #526176; }
+    .value { font-size: 42px; font-weight: 700; fill: #172b4d; }
+    .link { stroke: #2b6f91; stroke-width: 4; }
+    .inactive-link { stroke: #cbd3dd; stroke-width: 3; }
+  </style>
+
+  <rect width="1600" height="900" fill="#f5f7fa"/>
+  <path d="M760 150V750" stroke="#d8dee7" stroke-width="2"/>
+
+  <text class="eyebrow" x="112" y="310">SISTEMAS DISTRIBUIDOS</text>
+  <text class="heading" x="105" y="438">PAXOS</text>
+  <text class="subtitle" x="112" y="505">Consenso por mayoría</text>
+  <path d="M112 558H390" stroke="#2b6f91" stroke-width="4"/>
+  <text class="caption" x="112" y="608">Un valor. Un acuerdo.</text>
+
+  <text class="caption" x="850" y="180">Tres de cinco forman un quórum</text>
+
+  <path class="link" d="M1190 450 1120 280"/>
+  <path class="inactive-link" d="M1190 450 1370 380"/>
+  <path class="link" d="M1190 450 1320 625"/>
+  <path class="inactive-link" d="M1190 450 1055 625"/>
+  <path class="link" d="M1190 450 950 380"/>
+
+  <circle cx="1190" cy="450" r="76" fill="#fff" stroke="#172b4d" stroke-width="3"/>
+  <text class="value" x="1190" y="464" text-anchor="middle">v</text>
+
+  <circle cx="1120" cy="280" r="42" fill="#2b6f91"/>
+  <text class="node-label" x="1120" y="287" text-anchor="middle">A1</text>
+
+  <circle cx="1370" cy="380" r="42" fill="#e1e6ed"/>
+  <text class="inactive-label" x="1370" y="387" text-anchor="middle">A2</text>
+
+  <circle cx="1320" cy="625" r="42" fill="#2b6f91"/>
+  <text class="node-label" x="1320" y="632" text-anchor="middle">A3</text>
+
+  <circle cx="1055" cy="625" r="42" fill="#e1e6ed"/>
+  <text class="inactive-label" x="1055" y="632" text-anchor="middle">A4</text>
+
+  <circle cx="950" cy="380" r="42" fill="#2b6f91"/>
+  <text class="node-label" x="950" y="387" text-anchor="middle">A5</text>
+
+  <circle cx="905" cy="735" r="8" fill="#2b6f91"/>
+  <text class="caption" x="925" y="742">Aceptador del quórum</text>
+  <circle cx="1242" cy="735" r="8" fill="#e1e6ed" stroke="#9aa7b8" stroke-width="1"/>
+  <text class="caption" x="1262" y="742">Otro aceptador</text>
+</svg>
